@@ -200,7 +200,12 @@ const essentialData = books.map((book) => (
 
 essentialData
 
-const longBooks = books.filter((book) => book.pages > 500)
+const longBooks = books
+.filter((book) => book.pages > 500)
+.map((book) => ({
+  title: book.title,
+  pages: book.pages,
+}))
 
 longBooks
 
