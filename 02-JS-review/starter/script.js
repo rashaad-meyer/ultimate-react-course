@@ -209,3 +209,5 @@ const longBooks = books
 
 longBooks
 
+const pagesAllBooks = books.reduce((acc, book) => acc + book.pages, 0);
+pagesAllBooks
