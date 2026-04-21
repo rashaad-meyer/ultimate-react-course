@@ -145,25 +145,62 @@ function getBook(id) {
 
 
 // Destructuring
-const book = getBook(1);
+// const book = getBook(3);
 
-const { title, author, pages, publicationDate, genres, hasMovieAdaptation } = book
-title
-author
+// const { title, author, pages, publicationDate, genres, hasMovieAdaptation } = book
+// title
+// author
 
-genres
+// genres
 
-const [primaryGenre, secondayGenre, ...otherGenres] = genres;
+// const [primaryGenre, secondayGenre, ...otherGenres] = genres;
 
-console.log(primaryGenre, secondayGenre, otherGenres)
+// console.log(primaryGenre, secondayGenre, otherGenres)
 
-const newGenres = [...genres, 'epic fantasy']
-newGenres
+// const newGenres = [...genres, 'epic fantasy']
+// newGenres
 
-const updatedBook = {
-  ...book, 
-  moviePublication: "2001-12-19",
-  // overwriting an existing property
-  pages: 1210,
+// const updatedBook = {
+//   ...book, 
+//   moviePublication: "2001-12-19",
+//   // overwriting an existing property
+//   pages: 1210,
+// }
+// updatedBook
+
+
+// // 21. Ternaries instead if/else
+
+// const pagesRange = pages > 1000 ? "over a thousand" : "less than 1000";
+// pagesRange
+
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews.goodreads?.reviewsCount;
+  const librarything = book.reviews.librarything?.reviewsCount ?? 0;
+  return goodreads + librarything;
 }
-updatedBook
+
+// console.log(getTotalReviewCount(book))
+
+const books = getBooks();
+
+const x = [1, 2, 3, 4, 5].map(el => el*2);
+console.log(x)
+
+const titles = books.map((book) => book.title)
+titles;
+
+const essentialData = books.map((book) => (
+  {
+    title: book.title,
+    author: book.author,
+    reviewsCount: getTotalReviewCount(book)
+  }
+))
+
+essentialData
+
+const longBooks = books.filter((book) => book.pages > 500)
+
+longBooks
+
