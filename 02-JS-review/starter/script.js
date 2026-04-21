@@ -211,3 +211,11 @@ longBooks
 
 const pagesAllBooks = books.reduce((acc, book) => acc + book.pages, 0);
 pagesAllBooks
+
+const arr = [3, 7, 1, 9, 6];
+const sorted = arr.sort((a, b) => a - b);
+sorted
+
+const sortedBooksByPages = books.slice().sort((a, b) => b.pages - a.pages)
+
+console.log(sortedBooksByPages)
