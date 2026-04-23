@@ -233,3 +233,6 @@ const booksAfterAdding = [
 ]
 
 const booksAfterDelete =  booksAfterAdding.filter((book) => book.id !== 3)
+
+
+fetch("https://jsonplaceholder.typicode.com/todos");
