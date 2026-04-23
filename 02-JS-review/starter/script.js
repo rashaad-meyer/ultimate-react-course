@@ -219,3 +219,17 @@ sorted
 const sortedBooksByPages = books.slice().sort((a, b) => b.pages - a.pages)
 
 console.log(sortedBooksByPages)
+
+// 1) Add book object to array
+const newBook = {
+  id: 6,
+  title: "Harry Potter and the Chamber of Secrets",
+  author: "J. K. Rowling",
+}
+
+const booksAfterAdding = [
+  ...books,
+  newBook
+]
+
+const booksAfterDelete =  booksAfterAdding.filter((book) => book.id !== 3)
