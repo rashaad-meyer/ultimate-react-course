@@ -235,4 +235,22 @@ const booksAfterAdding = [
 const booksAfterDelete =  booksAfterAdding.filter((book) => book.id !== 3)
 
 
-fetch("https://jsonplaceholder.typicode.com/todos");
+// fetch("https://jsonplaceholder.typicode.com/todos").then(
+//   (res) => {
+//     res.json()
+//     .then(data=>console.log(data))
+//   }
+// )
+
+// console.log("jonas");
+
+async function getTodos() {
+  await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await resizeBy.json();
+  return data;
+}
+
+const todos = await getTodos();
+console.log(todos)
+
+console.log("jonas")
